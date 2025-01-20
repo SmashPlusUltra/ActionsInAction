@@ -10,7 +10,7 @@ on:
     - cron: '0 15-17 10 */3 *'
 
 jobs: 
-  MyFirsJob:
+  MyFirstJob:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,3 +23,13 @@ jobs:
         run: |
           echo " The repository ${{github.respository}} contains the following files:"
           tree
+  job_2:
+    runs-on: ubuntu-latest
+    needs: MyFirstJob
+    steps:
+      - run: "echo Job: ${{github.job}}"
+  job_3:
+    runs-on: ubuntu-latest
+    needs: MyFirstJob
+    steps:
+      - run: "echo Job: last parallel ${{github.job}}"

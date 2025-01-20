@@ -28,6 +28,7 @@ jobs:
     needs: MyFirstJob
     steps:
       - run: "echo Job: ${{github.job}}"
+      - run: echo "Little big things 🚀" >> $GITHUB_STEP_SUMMARY
   job_3:
     runs-on: ubuntu-latest
     needs: MyFirstJob

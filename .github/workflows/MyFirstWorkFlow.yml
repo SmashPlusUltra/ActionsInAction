@@ -28,7 +28,7 @@ jobs:
     steps:
       #with:
         #MY_VAR: ${{vars.ENV_VAR_1}}
-      - run: "echo Job: ${{github.job}} teste  ddddd"
+      - run: "echo Job: ${{github.job}} teste ${{env}} ddddd"
       - run: echo "Little big things 🚀" >> $GITHUB_STEP_SUMMARY
   job_3:
     runs-on: ubuntu-latest

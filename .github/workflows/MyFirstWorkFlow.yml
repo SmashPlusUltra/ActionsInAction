@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: MyFirstJob
     steps:
-      - run: "echo Job: ${{github.job}} ${{$GITHUB_ENV.my_test_var.secrets.my_test_var}}"
+      - run: "echo Job: ${{github.job}} ${{secrets.FIRST_SECRET}}"
       - run: echo "Little big things 🚀" >> $GITHUB_STEP_SUMMARY
   job_3:
     runs-on: ubuntu-latest
